@@ -1,6 +1,6 @@
 # Tax Calculator
 
-**Live site:** https://pschmiege.github.io/Tax_calc/
+**Live site:** https://pschmiege.github.io/tax_calc/
 
 A personal financial planning web app built with React. It calculates federal and state taxes, paycheck breakdowns, retirement savings, net worth, and long-term projections — all in real time as you adjust inputs.
 
