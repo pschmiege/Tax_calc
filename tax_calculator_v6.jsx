@@ -530,7 +530,7 @@ export default function App() {
         {/* ── BREAKDOWN ── */}
         {tab==="breakdown"&&(
           <div>
-            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10,marginBottom:12}}>
+            <div style={{display:"grid",gridTemplateColumns:hasSec?"1fr 1fr 1fr":"1fr",gap:10,marginBottom:12}}>
               {/* Primary */}
               <div style={card_style}>
                 <div style={{fontSize:12,fontWeight:700,color:ACCENT,marginBottom:6}}>Primary Employment</div>
@@ -563,30 +563,28 @@ export default function App() {
               </div>
 
               {/* Secondary */}
-              <div style={card_style}>
+              {hasSec&&<div style={card_style}>
                 <div style={{fontSize:12,fontWeight:700,color:ACCENT,marginBottom:6}}>Secondary Employment</div>
-                {hasSec?(<>
-                  <SHead label="Income"/>
-                  <RRow label="Gross Income" val={fm(R.sGross)} bold/>
-                  <RRow label="Adjusted Gross" val={fm(R.sGross)} bold color={ACCENT}/>
-                  <SHead label="Federal Taxes (withheld independently)"/>
-                  <RRow label="Fed Taxable Income" val={fm(R.sFedTaxable)} sub/>
-                  <RRow label="Federal Income Tax" val={fm(R.sFedTax)} sub/>
-                  <RRow label="Medicare" val={fm(R.sMedi)} sub/>
-                  <RRow label="FICA / OASDI" val={fm(R.sFica)} sub/>
-                  <RRow label="Total Federal Withheld" val={fm(R.sTotFedWithheld)} bold color={RED}/>
-                  <RRow label="Marginal Fed Rate" val={fp(R.sMargFed)}/>
-                  <RRow label="Effective Fed Rate" val={fp(R.sEffFed)}/>
-                  <SHead label="State Taxes"/>
-                  <RRow label="State Tax" val={fm(R.sStateTax)} sub/>
-                  <RRow label="Total Tax (withheld)" val={fm(R.sTotTax)} bold color={RED}/>
-                  <SHead label="After Tax"/>
-                  <RRow label="Final (after tax)" val={fm(R.sFinal)} bold color={R.sFinal>=0?GREEN:RED}/>
-                </>):<div style={{color:MUTED,fontSize:11,marginTop:8}}>Enable secondary income in sidebar.</div>}
-              </div>
+                <SHead label="Income"/>
+                <RRow label="Gross Income" val={fm(R.sGross)} bold/>
+                <RRow label="Adjusted Gross" val={fm(R.sGross)} bold color={ACCENT}/>
+                <SHead label="Federal Taxes (withheld independently)"/>
+                <RRow label="Fed Taxable Income" val={fm(R.sFedTaxable)} sub/>
+                <RRow label="Federal Income Tax" val={fm(R.sFedTax)} sub/>
+                <RRow label="Medicare" val={fm(R.sMedi)} sub/>
+                <RRow label="FICA / OASDI" val={fm(R.sFica)} sub/>
+                <RRow label="Total Federal Withheld" val={fm(R.sTotFedWithheld)} bold color={RED}/>
+                <RRow label="Marginal Fed Rate" val={fp(R.sMargFed)}/>
+                <RRow label="Effective Fed Rate" val={fp(R.sEffFed)}/>
+                <SHead label="State Taxes"/>
+                <RRow label="State Tax" val={fm(R.sStateTax)} sub/>
+                <RRow label="Total Tax (withheld)" val={fm(R.sTotTax)} bold color={RED}/>
+                <SHead label="After Tax"/>
+                <RRow label="Final (after tax)" val={fm(R.sFinal)} bold color={R.sFinal>=0?GREEN:RED}/>
+              </div>}
 
               {/* Combined */}
-              <div style={card_style}>
+              {hasSec&&<div style={card_style}>
                 <div style={{fontSize:12,fontWeight:700,color:ACCENT,marginBottom:6}}>Combined (Filing Analysis)</div>
                 <SHead label="Income"/>
                 <RRow label="Combined Gross" val={fm(R.cGross)} bold/>
@@ -619,7 +617,7 @@ export default function App() {
                 <RRow label="Investments" val={fm(-R.postInv)} sub/>
                 <RRow label="Living Expenses" val={fm(-R.living)} sub/>
                 <RRow label="Final" val={fm(R.cFinal)} bold color={R.cFinal>=0?GREEN:RED}/>
-              </div>
+              </div>}
             </div>
 
             {/* Waterfall */}
