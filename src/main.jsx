@@ -1,3 +1,4 @@
+// Copyright (c) 2026 Philip Schmiege (pschmiege). All rights reserved.
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from '../tax_calculator_v6.jsx'

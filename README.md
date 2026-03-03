@@ -115,3 +115,7 @@ Press `Ctrl+C` in the terminal where the server is running.
 - [React 18](https://react.dev/) — UI and state management
 - [Recharts](https://recharts.org/) — bar, pie, and area charts
 - [Vite](https://vitejs.dev/) — dev server and build tool
+
+---
+
+&copy; 2026 Philip Schmiege (pschmiege). All rights reserved. Unauthorized copying, modification, or distribution of this software is prohibited.

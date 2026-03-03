@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Philip Schmiege (pschmiege). All rights reserved.
+// Unauthorized copying, modification, or distribution of this software is prohibited.
 import { useState, useMemo, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, AreaChart, Area, CartesianGrid, Legend, Line } from "recharts";
 import { Settings, Briefcase, Building2, CreditCard, TrendingUp, Home, DollarSign, LayoutList, Landmark, BarChart2, Telescope, Waves, CheckCircle, AlertTriangle, PiggyBank } from "lucide-react";
